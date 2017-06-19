@@ -1,7 +1,7 @@
 //get dependencies
-var express 	  = require('express');
-var app			  = express();
-var jwt			  = require('express-jwt');
+var express 	  	= require('express');
+var app			  		= express();
+var jwt			  		= require('express-jwt');
 var rsaValidation = require('auth0-api-jwt-rsa-validation');
 
 //implement the movies API endpoint
@@ -100,7 +100,7 @@ var guard = function(req, res, next) {
 			}
 			break;
 		}
-		//same for publications 
+		//same for publications
 		case 'publications': {
 			var permissions = ['general'];
 			for(var i = 0; i < permissions.length; i++) {
@@ -139,5 +139,3 @@ app.use(function(err, req, res, next) {
 
 //launch our API server and have it listen on port 8080
 app.listen(8080);
-
-
