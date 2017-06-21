@@ -1,4 +1,4 @@
-//get dependencies
+ //get dependencies
 var express 	  	= require('express');
 var app			  		= express();
 var jwt			  		= require('express-jwt');

@@ -15,8 +15,8 @@ app.use(express.static(__dirname + '/public'));
 //these two variables we'll get from our Auth0 movieanalyst-website client.
 //head over the management dashboard at https://manage.auth0.com
 //find the MovieAnalyst Website Client and copy and paste the client
-var NON_INTERACTIVE_CLIENT_ID = 'N966mrefcEfrE0Nuspkl1860NEhgcAxx';
-var NON_INTERACTIVE_CLIENT_SECRET = 'zCAnzSngAlPQT-bx8FRCgrYuCxU_Iw2dAemjAPDIqKQk7ni-80OwNZ2BnXNzVlzr';
+var NON_INTERACTIVE_CLIENT_ID = 'N966mrefcEfrE0Nuspkl1860NEhgcAxx'; //'Auth0 client ID';
+var NON_INTERACTIVE_CLIENT_SECRET = 'zCAnzSngAlPQT-bx8FRCgrYuCxU_Iw2dAemjAPDIqKQk7ni-80OwNZ2BnXNzVlzr'; // 'Auth0 client secret key';
 
 //next, we'll define an object that we'll use to exchange our credentials for an access token
 var authData = {

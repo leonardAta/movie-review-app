@@ -15,8 +15,8 @@ app.use(express.static(__dirname + '/public'));
 //these two variables we'll get from our Auth0 movieanalyst-website client.
 //head over the management dashboard at https://manage.auth0.com
 //find the MovieAnalyst Website Client and copy and paste the client
-var NON_INTERACTIVE_CLIENT_ID = 'Gln7F3W3AaWRcV8zPbEKWTBq8Odv1PUk';
-var NON_INTERACTIVE_CLIENT_SECRET = 'nYdmG6dh_yI_xDFr05WvOqxjM64YL8-wEv1FVSwFwCQxbwqyB0IE-tzv8srXB50p';
+var NON_INTERACTIVE_CLIENT_ID = 'Gln7F3W3AaWRcV8zPbEKWTBq8Odv1PUk'; // 'Auth0 client ID';
+var NON_INTERACTIVE_CLIENT_SECRET = 'nYdmG6dh_yI_xDFr05WvOqxjM64YL8-wEv1FVSwFwCQxbwqyB0IE-tzv8srXB50p'; // 'Auth0 client secret key';
 
 //next, we'll define an object that we'll use to exchange our credentials for an access token
 var authData = {
@@ -49,9 +49,11 @@ app.get('/', function(req, res) {
 	res.render('index');
 })
 
-//the process will be the same for the remaining routes. We'll make sure to get the access_token first and then make the request to our API to get the data.
-//the key difference on the authors route, is that for our client, we're naming the route /authors, but our API endpoint is /reviewers. Our route on the client does not have to match the API endpoint route.
-app.get('/authors', getAccessToken, function(req, res) {
+//the process will be the same for the remaining routes. 
+//We'll make sure to get the access_token first and then make the request to our API to get the data.
+//the key difference on the authors route, is that for our client, we're naming the route /authors, but our API endpoint is /reviewers. 
+//Our route on the client does not have to match the API endpoint route.
+app.get('/authors', getAccessToken, function(req, res) 
 	request
 		.get('http://localhost:8080/reviewers')
 		.set('Authorization', 'Bearer ' + req.access_token)
